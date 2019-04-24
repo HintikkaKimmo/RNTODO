@@ -20,12 +20,15 @@
 ; Ignore metro
 .*/node_modules/metro/.*
 
+<PROJECT_ROOT>/Libdefs.js
+
 [include]
 
 [libs]
 node_modules/react-native/Libraries/react-native/react-native-interface.js
 node_modules/react-native/flow/
 node_modules/react-native/flow-github/
+./libdefs.js
 
 [options]
 emoji=true
@@ -64,10 +67,6 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(<VERSION>\\)? *\\(si
 suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(<VERSION>\\)? *\\(site=[a-z,_]*react_native[a-z,_]*\\)?)\\)?:? #[0-9]+
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
-
-module.name_mapper='^react-native$' -> '<PROJECT_ROOT>/dummy/react-native-dummy.js'
-module.name_mapper='^expo$' -> '<PROJECT_ROOT>/dummy/expo-dummy.js'
-module.name_mapper='^uuid$' -> '<PROJECT_ROOT>/dummy/uuid-dummy.js'
 
 [version]
 ^0.81.0
