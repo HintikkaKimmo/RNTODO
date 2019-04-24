@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "TODO",
-    "slug": "TODO",
+    "name": "RNTODO",
+    "slug": "rntodo",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "RNTODO app for Amplitude demo",
+    "githubUrl": "https://github.com/HintikkaKimmo/RNTODO"
   }
 }
