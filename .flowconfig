@@ -29,6 +29,7 @@ node_modules/react-native/flow-github/
 
 [options]
 emoji=true
+module.system.node.resolve_dirname=node_modules
 
 module.system=haste
 module.system.haste.use_name_reducers=true
