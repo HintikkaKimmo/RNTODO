@@ -65,6 +65,10 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(<VERSION>\\)? *\\(site=[a-z,_]*
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
+module.name_mapper='^react-native$' -> '<PROJECT_ROOT>/dummy/react-native-dummy.js'
+module.name_mapper='^expo$' -> '<PROJECT_ROOT>/dummy/expo-dummy.js'
+module.name_mapper='^uuid$' -> '<PROJECT_ROOT>/dummy/uuid-dummy.js'
+
 [version]
 ^0.81.0
 
