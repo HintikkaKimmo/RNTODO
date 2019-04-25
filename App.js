@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import { Amplitude } from 'expo';
 
 import Main from './app/Main';
 

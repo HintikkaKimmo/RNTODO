@@ -8,7 +8,7 @@ import {
   ScrollView,
   AsyncStorage
 } from 'react-native';
-import { LinearGradient } from 'expo';
+import { LinearGradient, Amplitude } from 'expo';
 import uuid from 'uuid/v1';
 import { primaryGradientArray } from './utils/Colors';
 import Header from './components/Header';
@@ -16,7 +16,7 @@ import SubTitle from './components/SubTitle';
 import Input from './components/Input';
 import List from './components/List';
 import Button from './components/Button';
-const headerTitle = 'To Do';
+const headerTitle = 'RNTODO';
 export default class Main extends React.Component {
   state = {
     inputValue: '',
@@ -26,6 +26,8 @@ export default class Main extends React.Component {
   };
   componentDidMount = () => {
     this.loadingItems();
+    Amplitude.initialize("d247884b28754c6b54bb21907e4c08d2");
+    Amplitude.setUserId("testman")
   };
   newInputValue = value => {
     this.setState({
@@ -65,6 +67,7 @@ export default class Main extends React.Component {
           }
         };
         this.saveItems(newState.allItems);
+        Amplitude.logEventWithProperties("task added", {"id":id, "text": inputValue});
         return { ...newState };
       });
     }
@@ -78,6 +81,7 @@ export default class Main extends React.Component {
         ...allItems
       };
       this.saveItems(newState.allItems);
+      Amplitude.logEventWithProperties("task deleted", {"id":id})
       return { ...newState };
     });
   };
@@ -94,6 +98,7 @@ export default class Main extends React.Component {
         }
       };
       this.saveItems(newState.allItems);
+      Amplitude.logEventWithProperties("task completed", {"id": id})
       return { ...newState };
     });
   };
@@ -119,6 +124,7 @@ export default class Main extends React.Component {
       this.setState({ allItems: {} });
     } catch (err) {
       console.log(err);
+      Amplitude.logEvent("all tasks deleted")
     }
   };
   saveItems = newItem => {
