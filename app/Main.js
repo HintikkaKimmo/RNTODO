@@ -22,12 +22,13 @@ export default class Main extends React.Component {
     inputValue: '',
     loadingItems: false,
     allItems: {},
-    isCompleted: false
+    isCompleted: false,
+    user: 'testman'
   };
   componentDidMount = () => {
     this.loadingItems();
     Amplitude.initialize("d247884b28754c6b54bb21907e4c08d2");
-    Amplitude.setUserId("testman")
+    Amplitude.setUserId(this.state.user)
   };
   newInputValue = value => {
     this.setState({
@@ -67,6 +68,7 @@ export default class Main extends React.Component {
           }
         };
         this.saveItems(newState.allItems);
+        Amplitude.setUserProperties({"status":"activated");
         Amplitude.logEventWithProperties("task added", {"id":id, "text": inputValue});
         return { ...newState };
       });
