@@ -18,7 +18,7 @@ import List from './components/List';
 import Button from './components/Button';
 const headerTitle = 'RNTODO';
 export default class Main extends React.Component {
-  state = {
+  state: any = {
     inputValue: '',
     loadingItems: false,
     allItems: {},
@@ -68,7 +68,7 @@ export default class Main extends React.Component {
           }
         };
         this.saveItems(newState.allItems);
-        Amplitude.setUserProperties({"status":"activated");
+        Amplitude.setUserProperties({"status":"activated"});
         Amplitude.logEventWithProperties("task added", {"id":id, "text": inputValue});
         return { ...newState };
       });

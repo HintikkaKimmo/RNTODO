@@ -4,7 +4,7 @@ import { StyleSheet, TextInput } from 'react-native';
 
 import { inputPlaceholder } from '../utils/Colors';
 
-const Input = ({ inputValue, onChangeText, onDoneAddItem }) => (
+const Input: any = ({ inputValue, onChangeText, onDoneAddItem }) => (
 	<TextInput
 		style={styles.input}
 		value={inputValue}
